@@ -8,12 +8,12 @@ const Unterbegriff = props => (
     <td>{props.unterbegriff.oberbegriff}</td>
     <td>{props.unterbegriff.vorzugsbenennung}</td>
     <td>{props.unterbegriff.definition}</td>
-    <td>{props.unterbegriff.weitere_benennungen}</td>
-    <td>{props.unterbegriff.betroffene_kunststoffe}</td>
+    <td>{props.unterbegriff.abgelehnte_benennungen}</td>
     <td>{props.unterbegriff.abgrenzung_zu}</td>
+    <td>{props.unterbegriff.betroffene_kunststoffe}</td>
+    <td>{props.unterbegriff.ursachen}</td>
     <td>{props.unterbegriff.anmerkung}</td>
     <td>{props.unterbegriff.bearbeitungsstatus}</td>
-    <td>{props.unterbegriff.createdAt}</td>
     <td>
       <Link to={"/edit/"+props.unterbegriff._id}>edit</Link> | <a href="javascript.;" onClick={() => { props.deleteUnterbegriff(props.unterbegriff._id) }}>delete</a>
     </td>
@@ -63,12 +63,12 @@ export default class UnterbegriffeList extends Component {
              <th>Oberbegriff</th>
              <th>Vorzugbenennung</th>
              <th>Definition</th>
-             <th>Weitere Benennungen</th>
-             <th>Betroffene Kunststoffe</th>
+             <th>Abgelehnte Benennungen</th>
              <th>Abgrenzung zu</th>
+             <th>Betroffene Kunststoffe</th>
+             <th>Ursachen</th>
              <th>Anmerkung</th>
              <th>Bearbeitungsstatus</th>
-             <th>Date</th>
              <th>Actions</th>
            </tr>
          </thead>
@@ -80,3 +80,4 @@ export default class UnterbegriffeList extends Component {
     )
   }
 }
+

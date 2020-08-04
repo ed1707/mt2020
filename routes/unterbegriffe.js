@@ -11,9 +11,10 @@ router.route('/add').post((req, res) => {
   const oberbegriff = req.body.oberbegriff;
   const vorzugsbenennung = req.body.vorzugsbenennung;
   const definition = req.body.definition;
-  const weitere_benennungen = req.body.weitere_benennungen;
-  const betroffene_kunststoffe = req.body.betroffene_kunststoffe;
+  const abgelehnte_benennungen = req.body.abgelehnte_benennungen;
   const abgrenzung_zu = req.body.abgrenzung_zu;
+  const betroffene_kunststoffe = req.body.betroffene_kunststoffe;
+  const ursachen = req.body.ursachen;
   const anmerkung = req.body.anmerkung;
   const bearbeitungsstatus = req.body.bearbeitungsstatus;
   const date = Date.parse(req.body.date);
@@ -22,9 +23,10 @@ router.route('/add').post((req, res) => {
     oberbegriff,
     vorzugsbenennung,
     definition,
-    weitere_benennungen,
-    betroffene_kunststoffe,
+    abgelehnte_benennungen,
     abgrenzung_zu,
+    betroffene_kunststoffe,
+    ursachen,
     anmerkung,
     bearbeitungsstatus,
     date,
@@ -46,15 +48,17 @@ router.route('/:id').delete((req, res) => {
     .then(() => res.json('Unterbegriff deleted.'))
     .catch(err => res.status(400).json('Error: ' + err));
 });
+
 router.route('/update/:id').post((req, res) => {
   Unterbegriff.findById(req.params.id)
     .then(unterbegriff => {
       unterbegriff.oberbegriff = req.body.oberbegriff;
       unterbegriff.vorzugsbenennung = req.body.vorzugsbenennung;
       unterbegriff.definition = req.body.definition;
-      unterbegriff.weitere_benennungen = req.body.weitere_benennungen;
-      unterbegriff.betroffene_kunststoffe= req.body.betroffene_kunststoffe;
+      unterbegriff.abgelehnte_benennungen = req.body.abgelehnte_benennungen;
       unterbegriff.abgrenzung_zu = req.body.abgrenzung_zu;
+      unterbegriff.betroffene_kunststoffe= req.body.betroffene_kunststoffe;
+      unterbegriff.ursachen = req.body.ursachen;
       unterbegriff.anmerkung = req.body.anmerkung;
       unterbegriff.bearbeitungsstatus = req.body.bearbeitungsstatus;
       unterbegriff.date = Date.parse(req.body.date);

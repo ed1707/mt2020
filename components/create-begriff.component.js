@@ -50,7 +50,7 @@ axios.post('http://localhost:5000/begriffe/add', begriff)
   render() {
     return (
       <div>
-        <h3>Create New Begriff</h3>
+        <h3>Neuen Oberbegriff hinzufügen</h3>
         <form onSubmit={this.onSubmit}>
           <div className='form-group'>
             <label>Oberbegriff </label>
@@ -73,10 +73,11 @@ axios.post('http://localhost:5000/begriffe/add', begriff)
             />
           </div>
           <div className='form-group'>
-            <input type='submit' value='Create Begriff' className='btn btn-primary' />
+            <input type='submit' value='Oberbegriff hinzufügen' className='btn btn-primary' />
           </div>
         </form>
       </div>
     )
   }
 }
+

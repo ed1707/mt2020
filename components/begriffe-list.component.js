@@ -49,7 +49,7 @@ export default class BegriffeList extends Component {
   render() {
    return (
      <div>
-       <h3>Vorhandene Begriffe</h3>
+       <h3>Vorhandene Obegriffe</h3>
        <table className="table">
          <thead className="thead-light">
            <tr>
@@ -66,3 +66,4 @@ export default class BegriffeList extends Component {
     )
   }
 }
+

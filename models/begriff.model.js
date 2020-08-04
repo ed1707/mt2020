@@ -12,7 +12,7 @@ const begriffSchema = new Schema({
   },
   alternative_benennung: { type: String, required: false }
 },
-{timestamps: true})
+{timestamps: true});
 
 const Begriff = mongoose.model('Begriff', begriffSchema);
 

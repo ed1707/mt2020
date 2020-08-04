@@ -11,9 +11,10 @@ export default class CreateUnterbegriff extends Component {
   this.onChangeOberbegriff = this.onChangeOberbegriff.bind(this);
   this.onChangeVorzugsbenennung = this.onChangeVorzugsbenennung.bind(this);
   this.onChangeDefinition = this.onChangeDefinition.bind(this);
-  this.onChangeWeitere_Benennungen = this.onChangeWeitere_Benennungen.bind(this);
-  this.onChangeBetroffene_Kunststoffe = this.onChangeBetroffene_Kunststoffe.bind(this);
+  this.onChangeAbgelehnte_Benennungen = this.onChangeAbgelehnte_Benennungen.bind(this);
   this.onChangeAbgrenzung_zu = this.onChangeAbgrenzung_zu.bind(this);
+  this.onChangeBetroffene_Kunststoffe = this.onChangeBetroffene_Kunststoffe.bind(this);
+  this.onChangeUrsachen = this.onChangeUrsachen.bind(this);
   this.onChangeAnmerkung = this.onChangeAnmerkung.bind(this);
   this.onChangeBearbeitungsstatus = this.onChangeBearbeitungsstatus.bind(this);
   this.onChangeDate = this.onChangeDate.bind(this);
@@ -23,11 +24,12 @@ export default class CreateUnterbegriff extends Component {
     oberbegriff:'',
     vorzugsbenennung:'',
     definition:[],
-    weitere_benennungen:'',
-    betroffene_kunststoffe:'',
+    abgelehnte_benennungen:'',
     abgrenzung_zu:'',
+    betroffene_kunststoffe:'',
+    ursachen:'',
     anmerkung: '',
-    bearbeitungsstatus: false,
+    bearbeitungsstatus: '',
     date: new Date(),
     begriffe: []
   }
@@ -67,9 +69,15 @@ onChangeDefinition(e) {
   })
 }
 
-onChangeWeitere_Benennungen(e) {
+onChangeAbgelehnte_Benennungen(e) {
   this.setState({
-    weitere_benennungen: e.target.value
+    abgelehnte_benennungen: e.target.value
+  })
+}
+
+onChangeAbgrenzung_zu(e) {
+  this.setState({
+    abgrenzung_zu: e.target.value
   })
 }
 
@@ -79,9 +87,9 @@ onChangeBetroffene_Kunststoffe(e) {
   })
 }
 
-onChangeAbgrenzung_zu(e) {
+onChangeUrsachen(e) {
   this.setState({
-    abgrenzung_zu: e.target.value
+    ursachen: e.target.value
   })
 }
 
@@ -110,10 +118,12 @@ onSubmit(e) {
     oberbegriff: this.state.oberbegriff,
     vorzugsbenennung: this.state.vorzugsbenennung,
     definition: this.state.definition,
-    weitere_benennungen: this.state.weitere_benennungen,
-    betroffene_kunststoffe: this.state.betroffene_kunststoffe,
+    abgelehnte_benennungen: this.state.abgelehnte_benennungen,
     abgrenzung_zu: this.state.abgrenzung_zu,
+    betroffene_kunststoffe: this.state.betroffene_kunststoffe,
+    ursachen: this.state.ursachen,
     anmerkung: this.state.anmerkung,
+    bearbeitungsstatus: this.state.bearbeitungsstatus,
     date: this.state.date
   }
 
@@ -122,25 +132,13 @@ console.log(unterbegriff);
 axios.post('http://localhost:5000/unterbegriffe/add', unterbegriff)
   .then(res => console.log(res.data));
 
-  // eslint-disable-next-line
-  this.state = {
-    oberbegriff:'',
-    vorzugsbenennung:'',
-    definition:'',
-    weitere_benennungen:'',
-    betroffene_kunststoffe:'',
-    abgrenzung_zu:'',
-    anmerkung: '',
-    bearbeitungsstatus: false,
-    date: new Date(),
-    begriffe: []
-  }
+  window.location = '/';
 }
 
   render() {
     return (
       <div>
-      <h3>Create New Unterbegriff</h3>
+      <h3>Neuen Unterbegriff hinzufügen</h3>
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
             <label>Oberbegriff: </label>
@@ -179,12 +177,22 @@ axios.post('http://localhost:5000/unterbegriffe/add', unterbegriff)
           </div>
 
           <div className="form-group">
-            <label>Weitere Benennungen: </label>
+            <label>Abgelehnte Benennungen: </label>
             <input
                 type="text"
                 className="form-control"
-                value={this.state.weitere_benennungen}
-                onChange={this.onChangeWeitere_Benennungen}
+                value={this.state.abgelehnte_benennungen}
+                onChange={this.onChangeAbgelehnte_Benennungen}
+                />
+          </div>
+
+          <div className="form-group">
+            <label>Abgrenzung zu: </label>
+            <input
+                type="text"
+                className="form-control"
+                value={this.state.abgrenzung_zu}
+                onChange={this.onChangeAbgrenzung_zu}
                 />
           </div>
 
@@ -199,12 +207,12 @@ axios.post('http://localhost:5000/unterbegriffe/add', unterbegriff)
           </div>
 
           <div className="form-group">
-            <label>Abgrenzung zu: </label>
+            <label>Ursachen: </label>
             <input
                 type="text"
                 className="form-control"
-                value={this.state.abgrenzung_zu}
-                onChange={this.onChangeAbgrenzung_zu}
+                value={this.state.ursachen}
+                onChange={this.onChangeUrsachen}
                 />
           </div>
 
@@ -267,7 +275,7 @@ axios.post('http://localhost:5000/unterbegriffe/add', unterbegriff)
           </div>
 
           <div className="form-group">
-            <input type="submit" value="Create Unterbegriff" className="btn btn-primary" />
+            <input type="submit" value="Unterbegriff hinzufügen" className="btn btn-primary" />
           </div>
         </form>
       </div>

@@ -10,13 +10,13 @@ export default class Navbar extends Component {
         <div className="collpase navbar-collapse">
         <ul className="navbar-nav mr-auto">
           <li className="navbar-item">
-          <Link to="/" className="nav-link">Unterbegriffe</Link>
+          <Link to="/" className="nav-link">Vorhandene Einträge</Link>
           </li>
           <li className="navbar-item">
-          <Link to="/create" className="nav-link">Create Unterbegriff</Link>
+          <Link to="/create" className="nav-link">Unterbegriff hinzufügen</Link>
           </li>
           <li className="navbar-item">
-          <Link to="/begriff" className="nav-link">Create Begriff</Link>
+          <Link to="/begriff" className="nav-link">Obegriff hinzufügen</Link>
           </li>
         </ul>
         </div>

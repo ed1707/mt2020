@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.js": "/kuwerkoapp-new/static/js/main.0b2d65ab.chunk.js",
+    "main.js.map": "/kuwerkoapp-new/static/js/main.0b2d65ab.chunk.js.map",
+    "runtime-main.js": "/kuwerkoapp-new/static/js/runtime-main.952647c5.js",
+    "runtime-main.js.map": "/kuwerkoapp-new/static/js/runtime-main.952647c5.js.map",
+    "static/css/2.36f319b0.chunk.css": "/kuwerkoapp-new/static/css/2.36f319b0.chunk.css",
+    "static/js/2.68882d61.chunk.js": "/kuwerkoapp-new/static/js/2.68882d61.chunk.js",
+    "static/js/2.68882d61.chunk.js.map": "/kuwerkoapp-new/static/js/2.68882d61.chunk.js.map",
+    "index.html": "/kuwerkoapp-new/index.html",
+    "precache-manifest.da81e70adfff8de921346139f42e5039.js": "/kuwerkoapp-new/precache-manifest.da81e70adfff8de921346139f42e5039.js",
+    "service-worker.js": "/kuwerkoapp-new/service-worker.js",
+    "static/css/2.36f319b0.chunk.css.map": "/kuwerkoapp-new/static/css/2.36f319b0.chunk.css.map",
+    "static/js/2.68882d61.chunk.js.LICENSE.txt": "/kuwerkoapp-new/static/js/2.68882d61.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.952647c5.js",
+    "static/css/2.36f319b0.chunk.css",
+    "static/js/2.68882d61.chunk.js",
+    "static/js/main.0b2d65ab.chunk.js"
+  ]
+}
